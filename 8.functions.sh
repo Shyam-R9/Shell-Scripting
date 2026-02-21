@@ -17,6 +17,7 @@ else
         else
             echo "mysql installation failed"
             exit 1
+        fi
     else
         echo "my sql already installed on this system"
         exit 0
