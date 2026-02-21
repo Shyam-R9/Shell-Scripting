@@ -5,7 +5,7 @@
 R="\e[31m" G="\e[32m" Y="\e[33m" N="\e[0m"
 
 #Check if the user has privileges to install the packages
-if [ $( id - u) -ne 0 ]; then
+if [ $(id -u) -ne 0 ]; then
     echo -e "$R You don't have privileges to install the packages $N"
 fi
 
@@ -24,7 +24,7 @@ install_pkg() {
 }
 packages=("mysql" "nginx" "python3")
 
-for "package" in "${packages[@]}"; do
+for package in "${packages[@]}"; do
     install_pkg "$package"
 done
 
