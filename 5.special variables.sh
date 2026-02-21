@@ -10,3 +10,4 @@ echo "PID of the current script: $$"
 sleep 10 &
 echo "PID of the last command running in the background: $!"
 echo "All argumets passed to the script: $*"
+echo "exit code of the last command: $?"
