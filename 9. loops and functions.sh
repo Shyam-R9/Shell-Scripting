@@ -31,7 +31,7 @@ install_package() {
 packages=("mysql" "nginx" "python3")
 
 for package in "${packages[@]}"; do
-    install_package() "$package"
+    install_package "$package"
 done
 
 echo "All checks complete"
