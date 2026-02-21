@@ -8,5 +8,3 @@ else
     echo "Ented number $1 is same as comparision number $NUMBER"
 
 fi
-
-
