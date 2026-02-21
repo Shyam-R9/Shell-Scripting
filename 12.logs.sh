@@ -6,7 +6,7 @@ R="\e[31m" G="\e[32m" Y="\e[33m" N="\e[0m"
 
 #setup log file
 LOG_FOLDER="/var/log/shell scripting"
-SCRIPT_NAME=$(basename "$0" | cut -d "." -f1)
+SCRIPT_NAME=$(basename "$0" | cut -d "." -f2)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 mkdir -p "$LOG_FOLDER"
 
