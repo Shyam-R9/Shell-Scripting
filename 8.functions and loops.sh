@@ -13,14 +13,14 @@ else
         #installing the software
         if dnf install mysql -y ; then
             echo "mysql installed successfully"
-            exit 0
+            
         else
             echo "mysql installation failed"
             exit 1
         fi
     else
         echo "mysql already installed on this system"
-        exit 0
+      
     fi
 
     #checking if software is already installed"
@@ -29,14 +29,14 @@ else
         #installing the software
         if dnf install nginx -y ; then
             echo "nginx installed successfully"
-            exit 0
+            
         else
             echo "nginx installation failed"
             exit 1
         fi
     else
         echo "nginx already installed on this system"
-        exit 0
+       
     fi
 
     #checking if software is already installed"
@@ -45,17 +45,18 @@ else
         #installing the software
         if dnf install python3 -y ; then
             echo "python installed successfully"
-            exit 0
+           
         else
             echo "python installation failed"
             exit 1
         fi
     else
         echo "python already installed on this system"
-        exit 0
+       
     fi
 
-
 fi
+echo "all checks complete"
+exit 0
 
 
