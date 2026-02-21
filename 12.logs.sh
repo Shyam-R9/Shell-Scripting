@@ -6,7 +6,7 @@ R="\e[31m" G="\e[32m" Y="\e[33m" N="\e[0m"
 
 #setup log file
 LOG_FOLDER="/var/log/shell scripting"
-SCRIPT_NAME=$(basename "$0" | cut -d "." f1)
+SCRIPT_NAME=$(basename "$0" | cut -d "." -f1)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 mkdir -p "$LOG_FOLDER"
 
@@ -15,6 +15,7 @@ echo -e "$Y Script execution started at: $(date)" | tee -a "$LOG_FILE"
 #Check if the user has privileges to install the packages
 if [ $(id -u) -ne 0 ]; then
     echo -e "$R You don't have privileges to install the packages $N" | tee -a "$LOG_FILE"
+    exit 1
 fi
 
 install_pkg() {
@@ -24,7 +25,7 @@ install_pkg() {
         if dnf install "$pkg" -y ; then
             echo -e "$G $pkg installed successfully $N" | tee -a "$LOG_FILE"
         else
-            echo-e "$R $pkg failed to install $N" | tee -a "$LOG_FILE"
+            echo -e "$R $pkg failed to install $N" | tee -a "$LOG_FILE"
         fi
     else
         echo -e "$Y $pkg already available on this system $N" | tee -a "$LOG_FILE"
